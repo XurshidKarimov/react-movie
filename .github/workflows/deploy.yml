@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Замените на версию Node.js, которую вы используете
+          node-version: '20' # Замените на версию Node.js, которую вы используете
           cache: 'yarn' # Включаем кеширование для Yarn
 
       - name: Install dependencies

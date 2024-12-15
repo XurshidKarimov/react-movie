@@ -1,13 +1,16 @@
 {
   "name": "3_project_cinema",
   "private": true,
+  "homepage": "https://XurshidKarimov.github.io/react-movie",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.7",
@@ -16,6 +19,7 @@
     "react-router": "^7.0.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

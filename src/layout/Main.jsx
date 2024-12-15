@@ -4,7 +4,7 @@ import Search from '../components/Search';
 import Preloader from '../components/Preloader';
 import Filter from "../components/Filter";
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = process.env.VITE_API_KEY;
 
 class Main extends Component {
 	state = {

@@ -4,8 +4,6 @@ import Search from '../components/Search';
 import Preloader from '../components/Preloader';
 import Filter from "../components/Filter";
 
-const API_KEY = process.env.VITE_API_KEY;
-
 class Main extends Component {
 	state = {
 		movies: [],
@@ -13,7 +11,9 @@ class Main extends Component {
 		loading: false,
 		title: '',
 		type: ''
-	} 
+	}
+	
+	API_KEY = import.meta.env.VITE_API_KEY;
 
 	fetchMovies = async () => {
 		this.setState({ loading: true });
@@ -21,7 +21,7 @@ class Main extends Component {
 		const { title, type } = this.state;
 
 		try {
-			const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${title}${type ? `&type=${type}` : ''}`);
+			const response = await fetch(`https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${title}${type ? `&type=${type}` : ''}`);
 			const { Search, totalResults } = await response.json();
 
 			if (Search) {

@@ -19,7 +19,7 @@ class Main extends Component {
 		const { title, type } = this.state;
 
 		try {
-			const response = await fetch(`http://www.omdbapi.com/?apikey=${import.meta.env.VITE_API_KEY}&s=${title}${type ? `&type=${type}` : ''}`);
+			const response = await fetch(`https://www.omdbapi.com/?apikey=${import.meta.env.VITE_API_KEY}&s=${title}${type ? `&type=${type}` : ''}`);
 			const { Search, totalResults } = await response.json();
 
 			if (Search) {

@@ -1,38 +1,29 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class Filter extends Component {
-	state = {
-		type: ''
+export default function Filter({ cb }) {
+	const [filterType, setType] = useState('');
+
+
+	const radioHandler = (event) => {
+		setType(event.target.value);
+		cb(event.target.value);
 	}
 
-
-	radioHandler = (event) => {
-		this.setState({ type: event.target.value }, () => {
-				this.props.cb(this.state.type);
-		});
-	}
-
-
-	render() {
-		const { type } = this.state;
-
-		return (
-			<div className="filter-bar">
-				<label>
-					<input onChange={this.radioHandler} className="with-gap" name="group3" type="radio" value='' checked={type == ''} />
-					<span>All</span>
-				</label>
-				<label>
-					<input onChange={this.radioHandler} className="with-gap" name="group3" type="radio" value='movie' checked={type == 'movie'}/>
-					<span>Movies</span>
-				</label>
-				<label>
-					<input onChange={this.radioHandler} className="with-gap" name="group3" type="radio" value='series' checked={type == 'series'}/>
-					<span>Series</span>
-				</label>
-			</div>
-		)
-	}
+	return (
+		<div className="filter-bar">
+			<label>
+				<input onChange={radioHandler} className="with-gap" name="group3" type="radio" value='' checked={filterType == ''} />
+				<span>All</span>
+			</label>
+			<label>
+				<input onChange={radioHandler} className="with-gap" name="group3" type="radio" value='movie' checked={filterType == 'movie'}/>
+				<span>Movies</span>
+			</label>
+			<label>
+				<input onChange={radioHandler} className="with-gap" name="group3" type="radio" value='series' checked={filterType == 'series'}/>
+				<span>Series</span>
+			</label>
+		</div>
+	)
 }
 
-export default Filter;

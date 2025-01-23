@@ -1,6 +1,4 @@
-import React from "react";
-
-function Preloader() {
+export default  function Preloader() {
 	return (
 		 <div className="progress">
       	<div className="indeterminate"></div>
@@ -8,4 +6,3 @@ function Preloader() {
 	)
 }
 
-export default Preloader;

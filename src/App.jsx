@@ -1,10 +1,9 @@
-import { } from 'react';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Main from './layout/Main';
 import './App.css';
 
-function App() {
+export default function App() {
 
   return (
     <div className='app'>
@@ -14,5 +13,3 @@ function App() {
     </div>
   )
 }
-
-export default App

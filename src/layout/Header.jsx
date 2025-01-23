@@ -1,6 +1,4 @@
-import React from 'react';
-
-function Header() {
+export default function Header() {
 	return (
 		<nav className='green'>
 			<div className="nav-wrapper">
@@ -14,5 +12,3 @@ function Header() {
 		</nav>
 	)
 }
-
-export default Header;

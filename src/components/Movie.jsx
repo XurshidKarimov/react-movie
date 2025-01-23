@@ -1,7 +1,4 @@
-import React from "react";
-
-function Movie({ movie: { Title, Year, imdbID, Type, Poster } }) {
-
+export default function Movie({ movie: { Title, Year, imdbID, Type, Poster } }) {
 	return (
 		<li className="movie-card">
 			<div className="">
@@ -30,5 +27,3 @@ function Movie({ movie: { Title, Year, imdbID, Type, Poster } }) {
 		</li>
 	)
 }
-
-export default Movie;
